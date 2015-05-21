@@ -20,5 +20,12 @@ from the OpenStreetMap servers using the Overpass API language. Users
 can select the query they wish to use in the `build_network.sh` script or
 develop their own query from these templates.
 
+## Convert to a MATSim Network
+The next step runs a Java class to build a MATSim network from the
+OpenStreetMap data. The user will need to point the program to her own
+MATSim source files.
+
+    matsim_path="/Users/user/matsim-0.6.0/*"
+
 
 
