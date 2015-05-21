@@ -7,10 +7,6 @@ echo "Downloading OSM Freight Network "
 wget -O nc_freeways.osm \
 	--post-file=queries/query_northcarolina.xml \
 	"http://overpass-api.de/api/interpreter"
-# rail network
-wget -O nc_rail.osm \
-	--post-file=queries/query_northcarolina_rail.xml \
-  "http://overpass-api.de/api/interpreter"
 
 # 2 ------------------
 echo "Converting to MATSim network"
