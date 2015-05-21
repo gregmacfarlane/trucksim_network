@@ -20,8 +20,8 @@ osmosis --read-xml data/usa_freeways.osm\
 
 # 2 ------------------
 echo "Converting to MATSim network"
-java -classpath\
- "./bin:$matsim_path"\
+java \
+ -classpath "./bin:$matsim_path"\
  trucksim_network.BuildNetwork\
  ./data/nc_freeways.osm "EPSG:2818" ./nc_network.xml.gz
 
