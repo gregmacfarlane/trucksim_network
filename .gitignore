@@ -1,3 +1,5 @@
 *.swp
 *.osm
 *.osm.db
+/bin/
+*.xml.gz
