@@ -12,25 +12,18 @@ for i in northeast south midwest west; do
   wget -O data/usa_${i}_freeways.osm --timeout=0 \
    --post-file=queries/usa_${i}.xml "http://overpass-api.de/api/interpreter"
 
-  ## convert to the most recent version of osm; why the api can't do this is 
-  ## entirely beyond me.
-  osmconvert data/usa_${i}_freeways.osm \
-   --fake-author --fake-version -o=data/usa_${i}_freeways_conv.osm
 done
 
 
 # Post-processing of downloaded data 
-
 osmosis \
- --read-xml-0.5 data/usa_northeast_freeways.osm \
- --read-xml-0.5 data/usa_south_freeways.osm \
+ --read-xml data/usa_northeast_freeways.osm \
+ --read-xml data/usa_south_freeways.osm \
+ --read-xml data/usa_midwest_freeways_conv.osm \
+ --read-xml data/usa_west_freeways_conv.osm \
  --merge \
- --write-xml data/usa_east_freeways.osm
-
- --read-xml data/usa_midwest_freeways.osm \
- --read-xml data/usa_west_freeways.osm \
  --bp file=./query/usa.poly \
-
+ --write-xml data/usa_freeways.osm
 
 
 # 2 ------------------

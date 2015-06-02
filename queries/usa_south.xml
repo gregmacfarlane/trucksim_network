@@ -7,5 +7,5 @@
     <recurse into="x" type="way-node"/> 
     <recurse type="up"/>
   </union>
-  <print/>
+  <print mode="meta"/>
 </osm-script>
