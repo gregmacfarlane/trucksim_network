@@ -3,3 +3,6 @@
 *.osm.db
 /bin/
 *.xml.gz
+data/NHPNv14-05.geojson
+data/nhs.zip
+nhpnv14-05geojson.zip
