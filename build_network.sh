@@ -15,18 +15,18 @@ for i in northeast south midwest west; do
 done
 
 
-# Post-processing of downloaded data 
+# 2 ----------------
+# Merge the different osm files together, and trim to USA border
 osmosis \
- --read-xml data/usa_northeast_freeways.osm \
- --read-xml data/usa_south_freeways.osm \
- --read-xml data/usa_midwest_freeways_conv.osm \
- --read-xml data/usa_west_freeways_conv.osm \
- --merge \
- --bp file=./query/usa.poly \
- --write-xml data/usa_freeways.osm
+ --rx data/usa_northeast_freeways.osm \
+ --rx data/usa_midwest_freeways.osm \
+ --rx data/usa_west_freeways.osm \
+ --merge --merge \
+ --bounding-polygon file="./queries/usa.poly"\
+ --wx data/usa_freeways.osm
 
 
-# 2 ------------------
+# 3 ------------------
 echo "Converting to MATSim network"
 java \
  -classpath "./bin:$matsim_path"\
