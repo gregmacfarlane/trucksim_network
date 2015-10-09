@@ -20,8 +20,9 @@ done
 osmosis \
  --rx data/usa_northeast_freeways.osm \
  --rx data/usa_midwest_freeways.osm \
+ --rx data/usa_south_freeways.osm \
  --rx data/usa_west_freeways.osm \
- --merge --merge \
+ --merge --merge --merge\
  --bounding-polygon file="./queries/usa.poly"\
  --wx data/usa_freeways.osm
 
@@ -31,5 +32,5 @@ echo "Converting to MATSim network"
 java \
  -classpath "./bin:$matsim_path"\
  trucksim_network.BuildNetwork\
- ./data/nc_freeways.osm "EPSG:2818" ./usa_network.xml.gz
+ ./data/usa_freeways.osm "EPSG:2818" ./usa_network.xml.gz
 
